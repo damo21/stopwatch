@@ -84,7 +84,11 @@ function start() {
 
 function reset() {
     window.clearInterval(interval)
-    miliseconds, seconds, minutes, hours, days = 0;
+    miliseconds = 0;
+    seconds = 0;
+    minutes = 0;
+    hours = 0;
+    days = 0;
     stoppedStarted = "stopped";
     document.getElementById("display").innerHTML = "00:00:00:00:00";
     document.getElementById("stopStart").innerHTML = "Start";
