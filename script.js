@@ -1,5 +1,15 @@
-let miliseconds, seconds, minutes, hours, days = 0;
-let displayMiliseconds, displaySeconds, displayMinutes, displayHours, displayDays = 0;
+let miliseconds = 0;
+let seconds = 0;
+let minutes = 0;
+let hours = 0;
+let days = 0;
+
+let displayMiliseconds = 0;
+let displaySeconds = 0;
+let displayMinutes = 0;
+let displayHours = 0;
+let displayDays = 0;
+
 let interval = null;
 let stoppedStarted = "stopped";
 
@@ -52,15 +62,20 @@ function stopwatch() {
     }
 
     document.getElementById("display").innerHTML = displayDays + ":" + displayHours + ":" + displayMinutes + ":" + displaySeconds + ":" + displayMiliseconds;
+
 }
+
+
 
 function start() {
     if (stoppedStarted === "stopped") {
+
         interval = window.setInterval(stopwatch, 10);
         document.getElementById("stopStart").innerHTML = "Stop";
         stoppedStarted = "started";
 
     } else {
+
         window.clearInterval(interval);
         document.getElementById("stopStart").innerHTML = "Start";
         stoppedStarted = "stopped";
@@ -73,4 +88,5 @@ function reset() {
     stoppedStarted = "stopped";
     document.getElementById("display").innerHTML = "00:00:00:00:00";
     document.getElementById("stopStart").innerHTML = "Start";
+
 }
